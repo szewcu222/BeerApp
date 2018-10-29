@@ -201,8 +201,15 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Chmiel.cs" />
+    <Compile Include="Models\Drozdze.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\Receptura.cs" />
+    <Compile Include="Models\SkladnikChmielu.cs" />
+    <Compile Include="Models\SkladnikSlodu.cs" />
+    <Compile Include="Models\Slod.cs" />
+    <Compile Include="Models\Styl.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
