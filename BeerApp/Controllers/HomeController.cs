@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BeerApp.DAL;
+using BeerApp.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,8 +10,14 @@ namespace BeerApp.Controllers
 {
     public class HomeController : Controller
     {
+        BeerContext db = new BeerContext();
         public ActionResult Index()
         {
+            var chmiel = new Chmiel { AlfaKwasy = 4.12f, NazwaChmielu = "Marynka"};
+            db.Chmiele.Add(chmiel);
+
+            db.SaveChanges();
+
             return View();
         }
 
