@@ -1,0 +1,27 @@
+﻿@model BeerApp.Models.Receptura
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Receptura</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NazwaReceptury)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NazwaReceptury)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.RecepturaID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

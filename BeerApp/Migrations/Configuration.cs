@@ -21,7 +21,7 @@ namespace BeerApp.Migrations
 
             //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
             //  to avoid creating duplicate seed data.
-            InitialDb.SeedBeer(context);
+            //InitialDb.SeedBeer(context);
         }
     }
 }

@@ -15,6 +15,7 @@ namespace BeerApp.Models
         public int RecepturaID { get; set; }
 
         [Required]
+        [Display(Name = "Nazwa receptury")]
         public string NazwaReceptury { get; set; }
 
 

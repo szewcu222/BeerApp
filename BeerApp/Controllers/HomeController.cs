@@ -21,6 +21,14 @@ namespace BeerApp.Controllers
             return View();
         }
 
+        public JsonResult RecepturaTest()
+        {
+            var receptura = db.Receptury.FirstOrDefault();
+            var json = Json(receptura);
+
+            return json;
+        }
+
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";

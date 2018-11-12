@@ -39,7 +39,7 @@ namespace BeerApp.DAL
             //using System.Data.Entity.ModelConfiguration.Conventionsl
             //Wyłącza konwencje, ktora automatycznie tworzy liczbe mnoga dla nazw tabel w bazie danych
             //Zamiast Kategorie mielibysmy Kategories
-                    modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
+            modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
         }
 
     }
