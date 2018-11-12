@@ -19,6 +19,17 @@ namespace BeerApp.Models
         [Required]
         public string Kod { get; set; }
 
+        public float OGmin { get; set; }
+        public float OGmax { get; set; }
+        public float FGmin { get; set; }
+        public float FGmax { get; set; }
+        public float ABVmin { get; set; }
+        public float ABVmax { get; set; }
+        public float IBUmin { get; set; }
+        public float IBUmax { get; set; }
+        public float EBCmin { get; set; }
+        public float EBCmax { get; set; }
+
 
         public virtual ICollection<Receptura> Receptury { get; set; }
     }

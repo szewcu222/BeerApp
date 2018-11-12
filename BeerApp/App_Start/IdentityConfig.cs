@@ -11,6 +11,8 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using Microsoft.Owin.Security;
 using BeerApp.Models;
+using BeerApp.DAL;
+
 
 namespace BeerApp
 {
@@ -42,7 +44,7 @@ namespace BeerApp
 
         public static ApplicationUserManager Create(IdentityFactoryOptions<ApplicationUserManager> options, IOwinContext context) 
         {
-            var manager = new ApplicationUserManager(new UserStore<Uzytkownik>(context.Get<ApplicationDbContext>()));
+            var manager = new ApplicationUserManager(new UserStore<Uzytkownik>(context.Get<BeerContext>()));
             // Configure validation logic for usernames
             manager.UserValidator = new UserValidator<Uzytkownik>(manager)
             {

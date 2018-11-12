@@ -18,6 +18,8 @@ namespace BeerApp.Models
 
         public int Barwa { get; set; }
 
+        public int Ekstraktywnosc { get; set; }
+
 
         public virtual ICollection<SkladnikSlodu> SkladnikiSlodu { get; set; }
 

@@ -17,6 +17,11 @@ namespace BeerApp.Models
 
         public EFlokulacja Flokulacja { get; set; } //Powinna być kategoria: niska, średnia, wysoka itp.
 
+        public EFermentacja Fermentacja { get; set; }
+
+        public int Toleranjca { get; set; }
+
+        public float Odfermentowanie { get; set; }
         
         public ICollection<Receptura> Receptury { get; set; }
     }
@@ -28,4 +33,9 @@ namespace BeerApp.Models
         wysoka
     }
 
+    public enum EFermentacja
+    {
+        dolna,
+        gorna
+    }
 }

@@ -10,7 +10,7 @@ namespace BeerApp.Controllers
 {
     public class HomeController : Controller
     {
-        BeerContext db = new BeerContext();
+        DAL.BeerContext db = new DAL.BeerContext();
         public ActionResult Index()
         {
             var chmiel = new Chmiel { AlfaKwasy = 4.12f, NazwaChmielu = "Marynka"};
