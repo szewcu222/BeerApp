@@ -91,26 +91,54 @@ namespace BeerApp.DAL
             Chmiel chmiel1 = new Chmiel { NazwaChmielu = "IUNGA", AlfaKwasy = 12 };
             Chmiel chmiel2 = new Chmiel { NazwaChmielu = "Lubelski", AlfaKwasy = 3 };
 
+
+
             Styl styl = new Styl { NazwaStylu = "APA", Kod = "APE123", OGmin= 12, OGmax= 20};
 
+            Przerwa przerwa1 = new Przerwa { Etap = "Maltozowa", Temperatura = 66, CzasTrwania = 60 };
+            Przerwa przerwa2 = new Przerwa { Etap = "Wygrzew", Temperatura = 75, CzasTrwania = 5 };
 
             Receptura receptura = new Receptura {
                 NazwaReceptury = "RReceptura pyzianowska",
+                Opis = "Receptura piwa warzonego pyzianowskiego",
                 Drozdze = new Drozdze { Fermentacja = EFermentacja.dolna, Flokulacja = EFlokulacja.niska },
+                Objetosc = 23f,
+                Gotowanie = 30f,
+                Wysladzanie = 10f,
+                TemperaturaFermentacji = 18,
                 SkladnikiSlodu = new List<SkladnikSlodu>
                 {
-                    new SkladnikSlodu {Ilosc=2, Slod=slod1,},
+                    new SkladnikSlodu {Ilosc=2, Slod=slod1},
                     new SkladnikSlodu {Ilosc=3, Slod=slod2}
                 },
+                IloscSlodu = 5,
                 SkladnikiChmielu = new List<SkladnikChmielu>
                 {
                     new SkladnikChmielu {Ilosc=1, Chmiel=chmiel1},
                     new SkladnikChmielu {Ilosc=1, Chmiel=chmiel2},
                 },
                 Uzytkownik = context.Users.SingleOrDefault(u => u.UserName == "4sobek4@gmail.com"),
-                Styl = styl
-
+                Styl = styl,
+                Przerwy = new List<Przerwa>
+                {
+                    przerwa1,
+                    przerwa2
+                },
+                OG = 12.0f,
+                FG = 2f,
+                ABV = 5f,
+                EBC = 20f,
+                IBU = 30
             };
+
+            //Chmiel cmielStary = context.Chmiele.FirstOrDefault(c => c.NazwaChmielu == "submit"); ID 1, recID 00
+            //Chmiel chmielNowy = new Chmiel
+            //{
+            //    NazwaChmielu = cmielStary.NazwaChmielu,
+            //    SkladnikiChmielu = cmielStary.SkladnikiChmielu,
+            //    AlfaKwasy = cmielStary.AlfaKwasy
+            //};
+
 
             context.Receptury.Add(receptura);
 

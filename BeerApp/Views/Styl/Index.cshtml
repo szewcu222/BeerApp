@@ -1,0 +1,100 @@
+﻿@model IEnumerable<BeerApp.Models.Styl>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.NazwaStylu)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Kod)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OGmin)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OGmax)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FGmin)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FGmax)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ABVmin)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ABVmax)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IBUmin)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IBUmax)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EBCmin)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EBCmax)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.NazwaStylu)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Kod)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OGmin)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OGmax)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FGmin)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FGmax)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ABVmin)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ABVmax)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IBUmin)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IBUmax)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EBCmin)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EBCmax)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.StylID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.StylID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.StylID })
+        </td>
+    </tr>
+}
+
+</table>

@@ -16,7 +16,7 @@ namespace BeerApp
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+                defaults: new { controller = "Receptura", action = "Index", id = UrlParameter.Optional }
             );
         }
     }

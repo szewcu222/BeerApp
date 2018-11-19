@@ -1,0 +1,40 @@
+﻿@model IEnumerable<BeerApp.Models.Chmiel>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.NazwaChmielu)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AlfaKwasy)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.NazwaChmielu)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AlfaKwasy)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ChmielID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ChmielID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ChmielID })
+        </td>
+    </tr>
+}
+
+</table>

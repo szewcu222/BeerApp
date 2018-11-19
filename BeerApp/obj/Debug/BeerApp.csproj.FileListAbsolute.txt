@@ -120,3 +120,6 @@ C:\Users\Damian\source\repos\BeerApp\BeerApp\obj\Debug\BeerApp.dll
 C:\Users\Damian\source\repos\BeerApp\BeerApp\obj\Debug\BeerApp.pdb
 C:\Users\Damian\source\repos\BeerApp\BeerApp\obj\Debug\BeerApp.Migrations.InitialCreate.resources
 C:\Users\Damian\source\repos\BeerApp\BeerApp\obj\Debug\BeerApp.csproj.GenerateResource.cache
+C:\Users\Damian\source\repos\BeerApp\BeerApp\obj\Debug\BeerApp.Migrations.addPrzerwaTable.resources
+C:\Users\Damian\source\repos\BeerApp\BeerApp\obj\Debug\BeerApp.Migrations.addRecepturaWoda.resources
+C:\Users\Damian\source\repos\BeerApp\BeerApp\obj\Debug\BeerApp.Migrations.SkladnikSloduRename.resources

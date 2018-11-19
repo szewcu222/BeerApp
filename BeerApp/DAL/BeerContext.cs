@@ -42,5 +42,6 @@ namespace BeerApp.DAL
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
         }
 
+        public System.Data.Entity.DbSet<BeerApp.Models.Drozdze> Drozdzes { get; set; }
     }
 }

@@ -124,5 +124,19 @@ namespace BeerApp.Controllers
             }
             base.Dispose(disposing);
         }
+
+        public ActionResult Search(string searchString)
+        {
+            if (!String.IsNullOrEmpty(searchString) && searchString != "Wyszukaj fraze")
+            {
+                ViewBag.Odpowiedz = $"Receptury z frazą '{searchString}'";
+                IQueryable<Receptura> receptury = db.Receptury.Where(s => s.NazwaReceptury.Contains(searchString)).Take(10);
+                return View("Index", receptury);
+
+            }
+            return RedirectToAction("Index");
+            
+        }
+
     }
 }

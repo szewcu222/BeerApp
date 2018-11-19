@@ -13,10 +13,8 @@ namespace BeerApp.Controllers
         DAL.BeerContext db = new DAL.BeerContext();
         public ActionResult Index()
         {
-            var chmiel = new Chmiel { AlfaKwasy = 4.12f, NazwaChmielu = "Marynka"};
-            db.Chmiele.Add(chmiel);
+            IQueryable<Receptura> receptury = db.Receptury.Take(10);
 
-            db.SaveChanges();
 
             return View();
         }

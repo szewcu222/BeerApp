@@ -7,7 +7,7 @@ using System.Web;
 
 namespace BeerApp.Models
 {
-    [Table("SklandikSlodu")]
+    [Table("SkladnikSlodu")]
     public partial class SkladnikSlodu
     {
         [Key]
@@ -20,7 +20,7 @@ namespace BeerApp.Models
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int SlodID { get; set; }
 
-        public decimal Ilosc { get; set; }
+        public float Ilosc { get; set; }
 
 
         public virtual Receptura Receptura { get; set; }

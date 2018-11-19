@@ -1,0 +1,51 @@
+﻿@model BeerApp.Models.Drozdze
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Drozdze</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Flokulacja)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Flokulacja)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Fermentacja)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fermentacja)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Toleranjca)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Toleranjca)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Odfermentowanie)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Odfermentowanie)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.DrozdzeID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

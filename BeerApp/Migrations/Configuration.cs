@@ -17,11 +17,14 @@ namespace BeerApp.Migrations
         protected override void Seed(BeerApp.DAL.BeerContext context)
         {
             var pas = "";
+            //UNCOMMENT THIS                !!!!!!!!!!!
+            //InitialDb.SeedBeer(context);
+
+
             //  This method will be called after migrating to the latest version.
 
             //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
             //  to avoid creating duplicate seed data.
-            //InitialDb.SeedBeer(context);
         }
     }
 }
