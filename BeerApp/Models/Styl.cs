@@ -14,21 +14,41 @@ namespace BeerApp.Models
         public int StylID { get; set; }
 
         [Required]
+        [Display(Name = "Nazwa stylu")]
         public string NazwaStylu { get; set; }
 
         [Required]
         public string Kod { get; set; }
 
-        public float OGmin { get; set; }
-        public float OGmax { get; set; }
-        public float FGmin { get; set; }
-        public float FGmax { get; set; }
-        public float ABVmin { get; set; }
-        public float ABVmax { get; set; }
-        public float IBUmin { get; set; }
-        public float IBUmax { get; set; }
-        public float EBCmin { get; set; }
-        public float EBCmax { get; set; }
+        [Display(Name = "OG min")]
+        public decimal OGmin { get; set; }
+
+        [Display(Name = "OG max")]
+        public decimal OGmax { get; set; }
+
+        [Display(Name = "FG min")]
+        public decimal FGmin { get; set; }
+
+        [Display(Name = "FG max")]
+        public decimal FGmax { get; set; }
+
+        [Display(Name = "Alk. min")]
+        public decimal ABVmin { get; set; }
+
+        [Display(Name = "Alk. max")]
+        public decimal ABVmax { get; set; }
+
+        [Display(Name = "IBU min")]
+        public decimal IBUmin { get; set; }
+
+        [Display(Name = "IBU max")]
+        public decimal IBUmax { get; set; }
+
+        [Display(Name = "EBC min")]
+        public decimal EBCmin { get; set; }
+
+        [Display(Name = "EBC max")]
+        public decimal EBCmax { get; set; }
 
 
         public virtual ICollection<Receptura> Receptury { get; set; }

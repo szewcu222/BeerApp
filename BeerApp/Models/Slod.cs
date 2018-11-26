@@ -14,6 +14,7 @@ namespace BeerApp.Models
         public int SlodID { get; set; }
         
         [Required]
+        [Display(Name = "Nazwa slodu")]
         public string NazwaSlodu { get; set; }
 
         public int Barwa { get; set; }

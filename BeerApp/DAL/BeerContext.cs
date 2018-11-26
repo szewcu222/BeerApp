@@ -34,6 +34,7 @@ namespace BeerApp.DAL
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
+            
             base.OnModelCreating(modelBuilder);
 
             //using System.Data.Entity.ModelConfiguration.Conventionsl

@@ -113,7 +113,6 @@ C:\Users\Damian\source\repos\BeerApp\BeerApp\bin\Microsoft.AI.DependencyCollecto
 C:\Users\Damian\source\repos\BeerApp\BeerApp\bin\Microsoft.AI.WindowsServer.xml
 C:\Users\Damian\source\repos\BeerApp\BeerApp\bin\Microsoft.AI.Web.xml
 C:\Users\Damian\source\repos\BeerApp\BeerApp\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\Damian\source\repos\BeerApp\BeerApp\obj\Debug\BeerApp.csprojAssemblyReference.cache
 C:\Users\Damian\source\repos\BeerApp\BeerApp\obj\Debug\BeerApp.csproj.CoreCompileInputs.cache
 C:\Users\Damian\source\repos\BeerApp\BeerApp\obj\Debug\BeerApp.csproj.CopyComplete
 C:\Users\Damian\source\repos\BeerApp\BeerApp\obj\Debug\BeerApp.dll
@@ -123,3 +122,4 @@ C:\Users\Damian\source\repos\BeerApp\BeerApp\obj\Debug\BeerApp.csproj.GenerateRe
 C:\Users\Damian\source\repos\BeerApp\BeerApp\obj\Debug\BeerApp.Migrations.addPrzerwaTable.resources
 C:\Users\Damian\source\repos\BeerApp\BeerApp\obj\Debug\BeerApp.Migrations.addRecepturaWoda.resources
 C:\Users\Damian\source\repos\BeerApp\BeerApp\obj\Debug\BeerApp.Migrations.SkladnikSloduRename.resources
+C:\Users\Damian\source\repos\BeerApp\BeerApp\obj\Debug\BeerApp.Migrations.TypesCorrections.resources

@@ -20,7 +20,7 @@ namespace BeerApp.DAL
 
         public static void SeedBeer(BeerContext context)
         {
-            var chmiel = new Chmiel { AlfaKwasy = 4.12f, NazwaChmielu = "INITIAL_DB" };
+            var chmiel = new Chmiel { AlfaKwasy = 4.0M, NazwaChmielu = "INITIAL_DB" };
             context.Chmiele.Add(chmiel);
 
             var UserManager = new UserManager<Uzytkownik>(new UserStore<Uzytkownik>(context));
@@ -88,12 +88,12 @@ namespace BeerApp.DAL
             Slod slod1 = new Slod { NazwaSlodu = "PaleAle", Barwa = 12, Ekstraktywnosc = 80 };
             Slod slod2 = new Slod { NazwaSlodu = "Pilznenski", Barwa = 4, Ekstraktywnosc = 60 };
 
-            Chmiel chmiel1 = new Chmiel { NazwaChmielu = "IUNGA", AlfaKwasy = 12 };
-            Chmiel chmiel2 = new Chmiel { NazwaChmielu = "Lubelski", AlfaKwasy = 3 };
+            Chmiel chmiel1 = new Chmiel { NazwaChmielu = "IUNGA", AlfaKwasy = 12.0M };
+            Chmiel chmiel2 = new Chmiel { NazwaChmielu = "Lubelski", AlfaKwasy = 3.0M };
 
 
 
-            Styl styl = new Styl { NazwaStylu = "APA", Kod = "APE123", OGmin= 12, OGmax= 20};
+            Styl styl = new Styl { NazwaStylu = "APA", Kod = "APE123", OGmin= 12.0M, OGmax= 20.0M};
 
             Przerwa przerwa1 = new Przerwa { Etap = "Maltozowa", Temperatura = 66, CzasTrwania = 60 };
             Przerwa przerwa2 = new Przerwa { Etap = "Wygrzew", Temperatura = 75, CzasTrwania = 5 };
@@ -101,17 +101,17 @@ namespace BeerApp.DAL
             Receptura receptura = new Receptura {
                 NazwaReceptury = "RReceptura pyzianowska",
                 Opis = "Receptura piwa warzonego pyzianowskiego",
-                Drozdze = new Drozdze { Fermentacja = EFermentacja.dolna, Flokulacja = EFlokulacja.niska },
-                Objetosc = 23f,
-                Gotowanie = 30f,
-                Wysladzanie = 10f,
+                Drozdze = new Drozdze { NazwaDrozdzy = "asdf",Fermentacja = EFermentacja.dolna, Flokulacja = EFlokulacja.niska },
+                Objetosc = 23.0M,
+                Gotowanie = 30.0M,
+                Wysladzanie = 10.0M,
                 TemperaturaFermentacji = 18,
                 SkladnikiSlodu = new List<SkladnikSlodu>
                 {
                     new SkladnikSlodu {Ilosc=2, Slod=slod1},
                     new SkladnikSlodu {Ilosc=3, Slod=slod2}
                 },
-                IloscSlodu = 5,
+                IloscSlodu = 5.0M,
                 SkladnikiChmielu = new List<SkladnikChmielu>
                 {
                     new SkladnikChmielu {Ilosc=1, Chmiel=chmiel1},
@@ -124,11 +124,11 @@ namespace BeerApp.DAL
                     przerwa1,
                     przerwa2
                 },
-                OG = 12.0f,
-                FG = 2f,
-                ABV = 5f,
-                EBC = 20f,
-                IBU = 30
+                OG = 12.0M,
+                FG = 2.0M,
+                ABV = 5.0M,
+                EBC = 20.0M,
+                IBU = 30.0M
             };
 
             //Chmiel cmielStary = context.Chmiele.FirstOrDefault(c => c.NazwaChmielu == "submit"); ID 1, recID 00

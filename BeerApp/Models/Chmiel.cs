@@ -14,9 +14,11 @@ namespace BeerApp.Models
         public int ChmielID { get; set; }
 
         [Required]
+        [Display(Name = "Nazwa Chmielu")]
         public string NazwaChmielu { get; set; }
 
-        public float AlfaKwasy { get; set; }
+        [Display(Name = "Alfa Kwasy")]
+        public decimal AlfaKwasy { get; set; }
 
         public virtual ICollection<SkladnikChmielu> SkladnikiChmielu { get; set; }
 

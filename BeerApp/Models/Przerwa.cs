@@ -17,6 +17,7 @@ namespace BeerApp.Models
         [Display(Name = "Etap")]
         public string Etap { get; set; }
         public int Temperatura { get; set; }
+        [Display(Name = "Czas trwania")]
         public int CzasTrwania { get; set; }
 
 

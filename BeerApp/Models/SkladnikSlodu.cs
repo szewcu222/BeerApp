@@ -20,7 +20,7 @@ namespace BeerApp.Models
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int SlodID { get; set; }
 
-        public float Ilosc { get; set; }
+        public decimal Ilosc { get; set; }
 
 
         public virtual Receptura Receptura { get; set; }

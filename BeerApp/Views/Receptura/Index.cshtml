@@ -1,16 +1,16 @@
 ﻿@model IEnumerable<BeerApp.Models.Receptura>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Lista receptur";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Index</h2>
+<h2>Lista receptur</h2>
 
 <p>
     @using (Html.BeginForm("Search", "Receptura", FormMethod.Post))
     {
-        <div class="container" style="padding:">
+        <div class="container">
             @Html.TextBox("searchString", "", new { htmlAttributes = new { @class = "form-control" }, placeholder = "Wyszukaj recepture?" })
         </div>
         <div class="container">
@@ -28,7 +28,12 @@
         <th>
             @Html.DisplayNameFor(model => model.NazwaReceptury)
         </th>
-        <th></th>
+        <th>
+            @Html.DisplayNameFor(model => model.Styl)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Uzytkownik.Imie)
+        </th>
     </tr>
 
 @foreach (var item in Model) {
@@ -37,9 +42,15 @@
             @Html.DisplayFor(modelItem => item.NazwaReceptury)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.RecepturaID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.RecepturaID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.RecepturaID })
+            @Html.DisplayFor(modelItem => item.Styl.NazwaStylu)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Uzytkownik.Imie)
+        </td>
+        <td>
+            @*@Html.ActionLink("Edit", "Edit", new { id = item.RecepturaID }) |*@
+            @Html.ActionLink("Details", "Details", new { id = item.RecepturaID }) 
+            @*@Html.ActionLink("Delete", "Delete", new { id = item.RecepturaID })*@
         </td>
     </tr>
 }

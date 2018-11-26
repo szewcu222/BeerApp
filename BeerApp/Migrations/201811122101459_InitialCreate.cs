@@ -56,7 +56,7 @@ namespace BeerApp.Migrations
                         DrozdzeID = c.Int(nullable: false, identity: true),
                         Flokulacja = c.Int(nullable: false),
                         Fermentacja = c.Int(nullable: false),
-                        Toleranjca = c.Int(nullable: false),
+                        Tolerancja = c.Int(nullable: false),
                         Odfermentowanie = c.Single(nullable: false),
                     })
                 .PrimaryKey(t => t.DrozdzeID);

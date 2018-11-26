@@ -13,15 +13,17 @@ namespace BeerApp.Models
         [Key]
         public int DrozdzeID { get; set; }
 
-        [Required] string NazwaDrozdzy { get; set; }
+        [Required]
+        [Display(Name = "Nazwa Drozdzy")]
+        public string NazwaDrozdzy { get; set; }
 
         public EFlokulacja Flokulacja { get; set; } //Powinna być kategoria: niska, średnia, wysoka itp.
 
         public EFermentacja Fermentacja { get; set; }
 
-        public int Toleranjca { get; set; }
+        public decimal Tolerancja { get; set; }
 
-        public float Odfermentowanie { get; set; }
+        public decimal Odfermentowanie { get; set; }
         
         public ICollection<Receptura> Receptury { get; set; }
     }

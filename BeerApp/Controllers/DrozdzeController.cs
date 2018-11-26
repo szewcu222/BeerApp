@@ -47,7 +47,7 @@ namespace BeerApp.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "DrozdzeID,Flokulacja,Fermentacja,Toleranjca,Odfermentowanie")] Drozdze drozdze)
+        public ActionResult Create([Bind(Include = "DrozdzeID,Flokulacja,Fermentacja,Tolerancja,Odfermentowanie")] Drozdze drozdze)
         {
             if (ModelState.IsValid)
             {
@@ -79,7 +79,7 @@ namespace BeerApp.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "DrozdzeID,Flokulacja,Fermentacja,Toleranjca,Odfermentowanie")] Drozdze drozdze)
+        public ActionResult Edit([Bind(Include = "DrozdzeID,Flokulacja,Fermentacja,Tolerancja,Odfermentowanie")] Drozdze drozdze)
         {
             if (ModelState.IsValid)
             {

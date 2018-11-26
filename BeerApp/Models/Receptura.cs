@@ -23,29 +23,38 @@ namespace BeerApp.Models
         public string NazwaReceptury { get; set; }
         public string Opis { get; set; }
 
-
+        [Display(Name = "Temperatura fermentacji")]
         public int TemperaturaFermentacji { get; set; }
 
-        public float StosunekWodaSlod { get; set; } //Stosunek objętości wody do wagi słodu na początku zacierania 
+        [Display(Name = "Ilosc wody na kg slodu")]
+        public decimal StosunekWodaSlod { get; set; } //Stosunek objętości wody do wagi słodu na początku zacierania 
 
-        public float Wysladzanie { get; set; }      //Objętość wody użytej do wysładzania
+        [Display(Name = "Objetosc wody do wysladzania")]
+        public decimal Wysladzanie { get; set; }      //Objętość wody użytej do wysładzania
 
-        public float Gotowanie { get; set; }        //Objętość brzeczki przed gotowaniem
+        [Display(Name = "Objetosc przed gotowaniem")]
+        public decimal Gotowanie { get; set; }        //Objętość brzeczki przed gotowaniem
 
-        public float Objetosc { get; set; }         //Objętość brzeczki przed zadaniem drożdży
+        [Display(Name = "Objetosc przed fermentacja")]
+        public decimal Objetosc { get; set; }         //Objętość brzeczki przed zadaniem drożdży
 
-        public float OG { get; set; }               //Ekstrakt przed zadaniem drożdży
+        [Display(Name = "Ekstrakt poczatkowy")]
+        public decimal OG { get; set; }               //Ekstrakt przed zadaniem drożdży
 
-        public float FG { get; set; }               //Ekstrakt po fermentacji
+        [Display(Name = "Ekstrakt koncowy")]
+        public decimal FG { get; set; }               //Ekstrakt po fermentacji
 
-        public float ABV { get; set; }              //Zawartość alkoholu
+        [Display(Name = "Alk. obj.")]
+        public decimal ABV { get; set; }              //Zawartość alkoholu
 
-        public float IBU { get; set; }              //Goryczka
+        [Display(Name = "Goryczka [IBU]")]
+        public decimal IBU { get; set; }              //Goryczka
 
-        public float EBC { get; set; }              //Barwa
+        [Display(Name = "Barwa [EBC]")]
+        public decimal EBC { get; set; }              //Barwa
 
-        public float IloscSlodu { get; set; }       //Czy potrzebne?
-        public float IloscWody {get; set;}
+        public decimal IloscSlodu { get; set; }       //Czy potrzebne?
+        public decimal IloscWody {get; set;}
 
         public virtual Uzytkownik Uzytkownik { get; set; }
         public virtual Drozdze Drozdze { get; set; }
