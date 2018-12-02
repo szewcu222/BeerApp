@@ -21,6 +21,7 @@ namespace BeerApp.Models
         [Required]
         [Display(Name = "Nazwa receptury")]
         public string NazwaReceptury { get; set; }
+        [DataType(DataType.MultilineText)]
         public string Opis { get; set; }
 
         [Display(Name = "Temperatura fermentacji")]

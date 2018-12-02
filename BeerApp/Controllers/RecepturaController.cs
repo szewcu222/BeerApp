@@ -50,7 +50,7 @@ namespace BeerApp.Controllers
         // GET: Receptura/Create
         public ActionResult Create()
         {
-            return View(PopulateSelectList(new RecepturaViewModel()));
+            return View(PopulateSelectList());
         }
 
         // POST: Receptura/Create
@@ -75,34 +75,7 @@ namespace BeerApp.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(RecepturaViewModel recepturaView)
         {
-            Receptura receptura = recepturaView.Receptura;
-
-            var user = userManager.FindById(User.Identity.GetUserId());
-
-            Styl styl = db.Style.FirstOrDefault(s => s.StylID == recepturaView.Styl.StylID);
-            receptura.Styl = styl;
-
-            Drozdze drozdze = db.Drozdze.FirstOrDefault(d => d.DrozdzeID == recepturaView.Drozdze.DrozdzeID);
-            receptura.Drozdze = drozdze;
-
-            Slod slod = db.Slody.FirstOrDefault(s => s.SlodID == recepturaView.Slod.SlodID);
-            SkladnikSlodu skladnikSlodu = new SkladnikSlodu() { Slod = slod, Ilosc = recepturaView.IloscSlodu };
-            List<SkladnikSlodu> skladnikiSlodu = new List<SkladnikSlodu>();
-            skladnikiSlodu.Add(skladnikSlodu);
-            receptura.SkladnikiSlodu = skladnikiSlodu;
-
-            Chmiel chmiel = db.Chmiele.FirstOrDefault(c => c.ChmielID == recepturaView.Chmiel.ChmielID);
-            SkladnikChmielu skladnikChmielu= new SkladnikChmielu() { Chmiel = chmiel, Ilosc = recepturaView.IloscChmielu};
-            List<SkladnikChmielu> skladnikiChmielu= new List<SkladnikChmielu>();
-            skladnikiChmielu.Add(skladnikChmielu);
-            receptura.SkladnikiChmielu = skladnikiChmielu;
-
-            Przerwa przerwa = db.Przerwy.FirstOrDefault(p => p.PrzerwaID == recepturaView.Przerwa.PrzerwaID);
-            List<Przerwa> przerwy = new List<Przerwa>();
-            przerwy.Add(przerwa);
-            receptura.Przerwy = przerwy;
-
-            receptura.Uzytkownik = user;
+            Receptura receptura = CompleteRecepturaInfo(recepturaView);
 
             db.Receptury.Add(receptura);
             db.SaveChanges();
@@ -122,12 +95,15 @@ namespace BeerApp.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
+            RecepturaViewModel recepturaView = PopulateSelectList();
             Receptura receptura = db.Receptury.Find(id);
+            recepturaView.Receptura = receptura;
+
             if (receptura == null)
             {
                 return HttpNotFound();
             }
-            return View(receptura);
+            return View(recepturaView);
         }
 
         // POST: Receptura/Edit/5
@@ -135,14 +111,14 @@ namespace BeerApp.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "RecepturaID,NazwaReceptury")] Receptura receptura)
+        public ActionResult Edit(RecepturaViewModel recepturaView)
         {
-            if (ModelState.IsValid)
-            {
-                db.Entry(receptura).State = EntityState.Modified;
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
+            Receptura receptura = CompleteRecepturaInfo(recepturaView);
+
+            db.Entry(receptura).State = EntityState.Modified;
+            db.SaveChanges();
+            return RedirectToAction("Index");
+
             return View(receptura);
         }
 
@@ -194,9 +170,22 @@ namespace BeerApp.Controllers
             
         }
 
-
-        private RecepturaViewModel PopulateSelectList(RecepturaViewModel recepturaViewModel)
+        public ActionResult Moje()
         {
+            var user = userManager.FindById(User.Identity.GetUserId());
+            IQueryable<Receptura> listaPrzepisowUzytkownika = db.Receptury.Where(m => m.Uzytkownik.Id == user.Id);
+
+            if (listaPrzepisowUzytkownika.Count() > 0)
+                return View(listaPrzepisowUzytkownika);
+            else
+                return View();
+        }
+
+
+        ///HELPERS
+        private RecepturaViewModel PopulateSelectList()
+        {
+            RecepturaViewModel recepturaViewModel = new RecepturaViewModel();
             List<SelectListItem> listSelectListStyl = new List<SelectListItem>();
 
             foreach (Styl styl in db.Style)
@@ -263,15 +252,46 @@ namespace BeerApp.Controllers
 
         }
 
-        public ActionResult Moje()
-        {
-            var user = userManager.FindById(User.Identity.GetUserId());
-            IQueryable<Receptura> listaPrzepisowUzytkownika = db.Receptury.Where(m => m.Uzytkownik.Id == user.Id);
 
-            if (listaPrzepisowUzytkownika.Count() > 0)
-                return View(listaPrzepisowUzytkownika);
-            else
-                return View();
+        private Receptura CompleteRecepturaInfo(RecepturaViewModel recepturaView)
+        {
+
+            Receptura receptura = recepturaView.Receptura;
+
+            var user = userManager.FindById(User.Identity.GetUserId());
+
+            Styl styl = db.Style.FirstOrDefault(s => s.StylID == recepturaView.Styl.StylID);
+            receptura.Styl = styl;
+
+            Drozdze drozdze = db.Drozdze.FirstOrDefault(d => d.DrozdzeID == recepturaView.Drozdze.DrozdzeID);
+            receptura.Drozdze = drozdze;
+
+            Slod slod = db.Slody.FirstOrDefault(s => s.SlodID == recepturaView.Slod.SlodID);
+            SkladnikSlodu skladnikSlodu = new SkladnikSlodu() { Slod = slod, Ilosc = recepturaView.IloscSlodu };
+            List<SkladnikSlodu> skladnikiSlodu = new List<SkladnikSlodu>();
+            skladnikiSlodu.Add(skladnikSlodu);
+            receptura.SkladnikiSlodu = skladnikiSlodu;
+
+            Chmiel chmiel = db.Chmiele.FirstOrDefault(c => c.ChmielID == recepturaView.Chmiel.ChmielID);
+            //SkladnikChmielu chmielReceptury = receptura.SkladnikiChmielu.FirstOrDefault(c => c.ChmielID == chmiel.ChmielID);
+            //if(chmielReceptury==null)
+            //{
+                SkladnikChmielu skladnikChmielu = new SkladnikChmielu() { Chmiel = chmiel, Ilosc = recepturaView.IloscChmielu };
+                List<SkladnikChmielu> skladnikiChmielu = new List<SkladnikChmielu>();
+                skladnikiChmielu.Add(skladnikChmielu);
+                receptura.SkladnikiChmielu = skladnikiChmielu;
+            //}
+
+
+
+            Przerwa przerwa = db.Przerwy.FirstOrDefault(p => p.PrzerwaID == recepturaView.Przerwa.PrzerwaID);
+            List<Przerwa> przerwy = new List<Przerwa>();
+            przerwy.Add(przerwa);
+            receptura.Przerwy = przerwy;
+
+            receptura.Uzytkownik = user;
+
+            return receptura;
         }
 
     }

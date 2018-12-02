@@ -50,7 +50,7 @@ namespace BeerApp.Migrations
                         EBC = c.Decimal(nullable: false, precision: 18, scale: 2),
                         IloscSlodu = c.Decimal(nullable: false, precision: 18, scale: 2),
                         IloscWody = c.Decimal(nullable: false, precision: 18, scale: 2),
-                        Drozdze_DrozdzeID = c.Int(),
+                        Drozdze_DrozdzeID = c.Int(nullable:true),
                         Styl_StylID = c.Int(),
                         Uzytkownik_Id = c.String(maxLength: 128),
                     })
