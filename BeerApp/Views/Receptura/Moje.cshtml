@@ -5,7 +5,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Lista receptur</h2>
+<h2>Lista receptur uzytkownika</h2>
 
 <p>
     @using (Html.BeginForm("Search", "Receptura", FormMethod.Post))
@@ -46,9 +46,9 @@
                 @Html.DisplayFor(modelItem => item.Styl.NazwaStylu)
             </td>
             <td>
-                @*@Html.ActionLink("Edit", "Edit", new { id = item.RecepturaID }) |*@
+                @Html.ActionLink("Edit", "Edit", new { id = item.RecepturaID }) |
                 @Html.ActionLink("Details", "Details", new { id = item.RecepturaID })
-                @*@Html.ActionLink("Delete", "Delete", new { id = item.RecepturaID })*@
+                @Html.ActionLink("Delete", "Delete", new { id = item.RecepturaID })
             </td>
         </tr>
     }

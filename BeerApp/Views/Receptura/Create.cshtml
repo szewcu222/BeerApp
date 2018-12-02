@@ -1,10 +1,39 @@
-﻿@model BeerApp.Models.Receptura
+﻿@model BeerApp.Models.RecepturaViewModel
 
 @{
     ViewBag.Title = "Create";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<script>
+    function addPrzerwa() {
+        var node = document.getElementById("przerwy")
+        var cln = node.cloneNode(true);
+        console.log("ADD_PRZERWA")
+        document.getElementById("fields").appendChild(cln);
 
+        insertAfter(node, cln)
+    }
+
+    function addSlod() {
+        var node = document.getElementById("slody")
+        var cln = node.cloneNode(true);
+        document.getElementById("fields").appendChild(cln);
+
+        insertAfter(node, cln)
+    }
+
+    function addChmiel() {
+        var node = document.getElementById("chmiele")
+        var cln = node.cloneNode(true);
+        document.getElementById("fields").appendChild(cln);
+
+        insertAfter(node, cln)
+    }
+
+    function insertAfter(referenceNode, newNode) {
+        referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling)
+    }
+</script>
 <h2>Create</h2>
 
 
@@ -12,24 +41,161 @@
 {
     @Html.AntiForgeryToken()
     
-    <div class="form-horizontal">
-        <h4>Receptura</h4>
-        <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        <div class="form-group">
-            @Html.LabelFor(model => model.NazwaReceptury, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.NazwaReceptury, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.NazwaReceptury, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
-            </div>
+<div id="fields" class="form-horizontal">
+    <h4>Receptura</h4>
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="form-group">
+        @Html.LabelFor(model => model.Receptura.NazwaReceptury, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Receptura.NazwaReceptury, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Receptura.NazwaReceptury, "", new { @class = "text-danger" })
         </div>
     </div>
+    @*Opis*@
+    <div class="form-group">
+        @Html.LabelFor(model => model.Receptura.Opis, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Receptura.Opis, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Receptura.Opis, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.Receptura.TemperaturaFermentacji, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Receptura.TemperaturaFermentacji, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Receptura.TemperaturaFermentacji, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.Receptura.StosunekWodaSlod, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Receptura.StosunekWodaSlod, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Receptura.StosunekWodaSlod, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.Receptura.Wysladzanie, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Receptura.Wysladzanie, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Receptura.Wysladzanie, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.Receptura.Gotowanie, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Receptura.Gotowanie, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Receptura.Gotowanie, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.Receptura.Objetosc, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Receptura.Objetosc, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Receptura.Objetosc, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.Receptura.OG, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Receptura.OG, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Receptura.OG, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.Receptura.FG, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Receptura.FG, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Receptura.FG, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.Receptura.ABV, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Receptura.ABV, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Receptura.ABV, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.Receptura.IBU, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Receptura.IBU, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Receptura.IBU, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.Receptura.EBC, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Receptura.EBC, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Receptura.EBC, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.Receptura.IloscSlodu, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Receptura.IloscSlodu, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Receptura.IloscSlodu, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.Receptura.IloscWody, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Receptura.IloscWody, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Receptura.IloscWody, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Styl, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.DropDownListFor(model => model.Styl.StylID, Model.ListaStylow, htmlAttributes: new { @class = "form-control" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Drozdze, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.DropDownListFor(model => model.Drozdze.DrozdzeID, Model.ListaDrozdzy, htmlAttributes: new { @class = "form-control" })
+        </div>
+    </div>
+
+    <a class="btn btn-default" onclick="addSlod()">Dodaj Slod+</a>
+    <div id="slody" class="form-group">
+        @Html.LabelFor(model => model.Slod, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.DropDownListFor(model => model.Slod.SlodID, Model.ListaSlodow, htmlAttributes: new { @class = "form-control" })
+            Ilosc
+            @Html.EditorFor(model => model.IloscSlodu, new { htmlAttributes = new { @class = "form-control" } })
+        </div>
+    </div>
+
+    <a class="btn btn-default" onclick="addChmiel()">Dodaj Chmiel +</a>
+    <div id="chmiele" class="form-group">
+        @Html.LabelFor(model => model.Chmiel, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.DropDownListFor(model => model.Chmiel.ChmielID, Model.ListaChmieli, htmlAttributes: new { @class = "form-control" })
+            Ilosc
+            @Html.EditorFor(model => model.IloscChmielu, new { htmlAttributes = new { @class = "form-control" } })
+        </div>
+    </div>
+
+    <a class="btn btn-default" onclick="addPrzerwa()">Dodaj Przerwe+</a>
+    <div id="przerwy" class="form-group">
+        @Html.LabelFor(model => model.Przerwa, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.DropDownListFor(model => model.Przerwa.PrzerwaID, Model.ListaPrzerw, htmlAttributes: new { @class = "form-control" })
+        </div>
+    </div>
+
+</div>
+<div>
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Create" class="btn btn-default" />
+        </div>
+    </div>
+</div>
 }
 
 <div>

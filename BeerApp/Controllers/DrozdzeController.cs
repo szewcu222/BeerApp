@@ -18,7 +18,7 @@ namespace BeerApp.Controllers
         // GET: Drozdze
         public ActionResult Index()
         {
-            return View(db.Drozdzes.ToList());
+            return View(db.Drozdze.ToList());
         }
 
         // GET: Drozdze/Details/5
@@ -28,7 +28,7 @@ namespace BeerApp.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Drozdze drozdze = db.Drozdzes.Find(id);
+            Drozdze drozdze = db.Drozdze.Find(id);
             if (drozdze == null)
             {
                 return HttpNotFound();
@@ -51,7 +51,7 @@ namespace BeerApp.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Drozdzes.Add(drozdze);
+                db.Drozdze.Add(drozdze);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -66,7 +66,7 @@ namespace BeerApp.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Drozdze drozdze = db.Drozdzes.Find(id);
+            Drozdze drozdze = db.Drozdze.Find(id);
             if (drozdze == null)
             {
                 return HttpNotFound();
@@ -97,7 +97,7 @@ namespace BeerApp.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Drozdze drozdze = db.Drozdzes.Find(id);
+            Drozdze drozdze = db.Drozdze.Find(id);
             if (drozdze == null)
             {
                 return HttpNotFound();
@@ -110,8 +110,8 @@ namespace BeerApp.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Drozdze drozdze = db.Drozdzes.Find(id);
-            db.Drozdzes.Remove(drozdze);
+            Drozdze drozdze = db.Drozdze.Find(id);
+            db.Drozdze.Remove(drozdze);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

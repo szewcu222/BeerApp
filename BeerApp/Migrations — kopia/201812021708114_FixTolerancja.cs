@@ -3,7 +3,7 @@ namespace BeerApp.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class TypesCorrections : DbMigration
+    public partial class FixTolerancja : DbMigration
     {
         public override void Up()
         {

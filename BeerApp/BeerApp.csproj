@@ -209,25 +209,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201811122101459_InitialCreate.cs" />
-    <Compile Include="Migrations\201811122101459_InitialCreate.Designer.cs">
-      <DependentUpon>201811122101459_InitialCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201811192001117_addPrzerwaTable.cs" />
-    <Compile Include="Migrations\201811192001117_addPrzerwaTable.Designer.cs">
-      <DependentUpon>201811192001117_addPrzerwaTable.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201811192009013_addRecepturaWoda.cs" />
-    <Compile Include="Migrations\201811192009013_addRecepturaWoda.Designer.cs">
-      <DependentUpon>201811192009013_addRecepturaWoda.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201811192010415_SkladnikSloduRename.cs" />
-    <Compile Include="Migrations\201811192010415_SkladnikSloduRename.Designer.cs">
-      <DependentUpon>201811192010415_SkladnikSloduRename.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201811261939004_TypesCorrections.cs" />
-    <Compile Include="Migrations\201811261939004_TypesCorrections.Designer.cs">
-      <DependentUpon>201811261939004_TypesCorrections.cs</DependentUpon>
+    <Compile Include="Migrations\201812021712361_Initial.cs" />
+    <Compile Include="Migrations\201812021712361_Initial.Designer.cs">
+      <DependentUpon>201812021712361_Initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -237,6 +221,7 @@
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Przerwa.cs" />
     <Compile Include="Models\Receptura.cs" />
+    <Compile Include="Models\RecepturaViewModel.cs" />
     <Compile Include="Models\SkladnikChmielu.cs" />
     <Compile Include="Models\SkladnikSlodu.cs" />
     <Compile Include="Models\Slod.cs" />
@@ -274,6 +259,7 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="ClassDiagram1.cd" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -361,6 +347,7 @@
     <Content Include="Scripts\popper.js.map" />
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
+    <Content Include="Views\Receptura\Moje.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -371,27 +358,15 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201811122101459_InitialCreate.resx">
-      <DependentUpon>201811122101459_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201811192001117_addPrzerwaTable.resx">
-      <DependentUpon>201811192001117_addPrzerwaTable.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201811192009013_addRecepturaWoda.resx">
-      <DependentUpon>201811192009013_addRecepturaWoda.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201811192010415_SkladnikSloduRename.resx">
-      <DependentUpon>201811192010415_SkladnikSloduRename.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201811261939004_TypesCorrections.resx">
-      <DependentUpon>201811261939004_TypesCorrections.cs</DependentUpon>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
     <TypeScriptCompile Include="Scripts\index.d.ts" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201812021712361_Initial.resx">
+      <DependentUpon>201812021712361_Initial.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

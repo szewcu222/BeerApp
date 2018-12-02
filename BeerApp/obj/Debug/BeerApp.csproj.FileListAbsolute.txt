@@ -117,9 +117,6 @@ C:\Users\Damian\source\repos\BeerApp\BeerApp\obj\Debug\BeerApp.csproj.CoreCompil
 C:\Users\Damian\source\repos\BeerApp\BeerApp\obj\Debug\BeerApp.csproj.CopyComplete
 C:\Users\Damian\source\repos\BeerApp\BeerApp\obj\Debug\BeerApp.dll
 C:\Users\Damian\source\repos\BeerApp\BeerApp\obj\Debug\BeerApp.pdb
-C:\Users\Damian\source\repos\BeerApp\BeerApp\obj\Debug\BeerApp.Migrations.InitialCreate.resources
+C:\Users\Damian\source\repos\BeerApp\BeerApp\obj\Debug\BeerApp.csprojAssemblyReference.cache
+C:\Users\Damian\source\repos\BeerApp\BeerApp\obj\Debug\BeerApp.Migrations.Initial.resources
 C:\Users\Damian\source\repos\BeerApp\BeerApp\obj\Debug\BeerApp.csproj.GenerateResource.cache
-C:\Users\Damian\source\repos\BeerApp\BeerApp\obj\Debug\BeerApp.Migrations.addPrzerwaTable.resources
-C:\Users\Damian\source\repos\BeerApp\BeerApp\obj\Debug\BeerApp.Migrations.addRecepturaWoda.resources
-C:\Users\Damian\source\repos\BeerApp\BeerApp\obj\Debug\BeerApp.Migrations.SkladnikSloduRename.resources
-C:\Users\Damian\source\repos\BeerApp\BeerApp\obj\Debug\BeerApp.Migrations.TypesCorrections.resources
